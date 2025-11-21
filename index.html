@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSTKYG - Resto Kayang</title>
+    <!-- Menggunakan Tailwind CSS untuk styling cepat -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 1. NAVBAR (STICKY) -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-5 flex justify-between items-center mix-blend-difference text-white transition-all duration-300"
+        id="navbar">
+        <a href="#" class="text-3xl font-black tracking-tighter hover:text-kayang-yellow transition-colors">RSTKYG</a>
+        <div class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wide">
+            <a href="#about" class="hover:text-kayang-yellow transition-colors">About</a>
+            <a href="#menu" class="hover:text-kayang-yellow transition-colors">Menu</a>
+            <a href="#contact" class="hover:text-kayang-yellow transition-colors">Contact Us</a>
+        </div>
+        <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center gap-8 text-xl">
+        <button class="absolute top-6 right-6 text-white text-3xl"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')">&times;</button>
+        <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+        <a href="#menu" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Menu</a>
+        <a href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact Us</a>
+    </div>
+
+    <!-- 2. HERO SECTION (FIXED BACKGROUND) -->
+    <header class="hero-fixed bg-cover bg-center bg-no-repeat"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/back_tortilla.jpeg');">
+        <div class="text-center px-4">
+            <h1
+                class="text-7xl md:text-[10rem] font-black leading-none tracking-tighter text-kayang-yellow drop-shadow-2xl">
+                RESTO<br>KAYANG
+            </h1>
+            <p class="mt-6 text-lg md:text-2xl text-white max-w-2xl mx-auto font-light">
+                Authentic Flavors. Modern Vibes.
+            </p>
+            <div class="mt-10 animate-bounce text-kayang-yellow text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <!-- Open Hours Widget -->
+        <div
+            class="absolute bottom-8 left-8 border border-white/20 backdrop-blur-md p-4 rounded bg-black/30 hidden md:block">
+            <p class="text-xs text-gray-300 mb-1">OPENING HOURS</p>
+            <div class="text-sm font-bold flex justify-between gap-4">
+                <span>TUE - THU</span>
+                <span>08.00 - 17.00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. CONTENT LAYER (MENUTUP HERO SAAT SCROLL) -->
+    <div class="content-layer">
+        <!-- BAGIAN ABOUT (BARU) -->
+        <section id="about" class="py-24 px-6 md:px-12 border-b border-gray-900">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Teks About -->
+                <div>
+                    <h4 class="text-kayang-yellow font-bold uppercase tracking-widest mb-2">Our Story</h4>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Tradition Meets<br>Modern Passion</h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Founded in 2010, Resto Kayang started as a humble kitchen dedicated to preserving authentic
+                        local flavors. We believe that food is not just sustenance, but a story told through spices and
+                        fire.
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Every dish is crafted with handpicked ingredients, ensuring that the heritage of our ancestors
+                        lives on in every bite, served in a modern, comfortable atmosphere.
+                    </p>
+                    <!-- Stats Kecil -->
+                    <div class="flex gap-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-white">15+</span>
+                            <span class="text-sm text-gray-500">Years Experience</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-white">50+</span>
+                            <span class="text-sm text-gray-500">Signature Dishes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gambar About -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-kayang-yellow z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&auto=format&fit=crop&q=60"
+                        alt="Chef Cooking"
+                        class="relative z-10 rounded-lg shadow-2xl w-full grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-kayang-yellow z-0">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN MENU -->
+        <section id="menu" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Indulge in our<br><span
+                            class="text-gray-500">Exquisite Favorites</span></h2>
+                    <p class="text-gray-400 max-w-md text-sm">
+                        Discover a symphony of tastes with our handpicked favorites.
+                    </p>
+                </div>
+                <a href="#contact"
+                    class="bg-kayang-yellow text-black px-8 py-3 font-bold rounded hover:bg-white hover:scale-105 transition-all">
+                    Book Online
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Produk 1 -->
+                <div class="menu-card group rounded-xl overflow-hidden p-4">
+                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                        <img src="images/menu/66269a72-76aa-4967-9f10-419b9e814f76.PNG" alt="Fried Tortilla"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Crispy Fried Tortilla</h3>
+                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Mie kuning lezat dengan kuah gurih dan
+                        sayuran segar pilihan.</p>
+                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                        <div class="text-kayang-yellow text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="font-bold text-lg">IDR 200.000</span>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="menu-card group rounded-xl overflow-hidden p-4">
+                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                        <img src="images/menu/tortilla-frozen.jpeg" alt="Frozen Tortilla"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Frozen Tortilla warps</h3>
+                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Daging sapi empuk dengan bumbu rendang
+                        autentik.</p>
+                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                        <div class="text-kayang-yellow text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <span class="font-bold text-lg">IDR 120.000</span>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="menu-card group rounded-xl overflow-hidden p-4">
+                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                        <img src="images/menu/mini_tortilla.jpeg" alt="mini_tortilla"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mini Tortilla</h3>
+                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Ikan segar dimasak dengan kuah asam
+                        pedas.</p>
+                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                        <div class="text-kayang-yellow text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="font-bold text-lg">IDR 160.000</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN CONTACT -->
+        <section id="contact" class="py-20 bg-zinc-900">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-4xl font-bold mb-4">Book a Table</h2>
+                <p class="text-gray-400 mb-10">Reserve your spot for an unforgettable dining experience.</p>
+
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
+                    onsubmit="event.preventDefault(); alert('Booking Terkirim!');">
+                    <div class="col-span-2 md:col-span-1">
+                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">NAME</label>
+                        <input type="text" placeholder="Your Name"
+                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none">
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">PHONE</label>
+                        <input type="tel" placeholder="0812..."
+                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none">
+                    </div>
+                    <div class="col-span-2">
+                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">MESSAGE / REQUEST</label>
+                        <textarea rows="4" placeholder="Special requests..."
+                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none"></textarea>
+                    </div>
+                    <div class="col-span-2 mt-4">
+                        <button type="submit"
+                            class="w-full bg-kayang-yellow text-black font-bold py-4 rounded hover:bg-white transition-colors">
+                            CONFIRM BOOKING
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-black border-t border-gray-900 pt-20 pb-10 px-6 md:px-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+
+                <!-- Logo & Info -->
+                <div class="md:col-span-1">
+                    <h2 class="text-4xl font-black tracking-tighter text-white mb-6">RSTKYG</h2>
+                    <div class="flex flex-col gap-3 text-sm text-gray-400">
+                        <a href="mailto:booking@RSTKYG.com" class="hover:text-kayang-yellow"><i
+                                class="far fa-envelope mr-2"></i> booking@RSTKYG.com</a>
+                        <a href="#" class="hover:text-kayang-yellow"><i class="fas fa-phone-alt mr-2"></i> (021)
+                            456-7890</a>
+                    </div>
+                    <div class="flex gap-4 mt-8 text-xl text-white">
+                        <a href="#" class="hover:text-kayang-yellow"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-kayang-yellow"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-kayang-yellow"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Menu Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Menu</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#about" class="hover:text-white">About</a></li>
+                        <li><a href="#menu" class="hover:text-white">Menu</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Others -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Others</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Open At -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Open at</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-400">Tuesday</span>
+                            <span class="font-mono">08.00 - 17.00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-400">Wednesday</span>
+                            <span class="font-mono">08.00 - 17.00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-400">Thursday</span>
+                            <span class="font-mono">08.00 - 17.00</span>
+                        </li>
+                        <li class="flex justify-between pt-2 opacity-50">
+                            <span class="text-gray-600">Other Days</span>
+                            <span class="text-gray-600">Closed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 mt-16 pt-8 text-center text-gray-600 text-xs">
+                &copy; 2024 Restokayang. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
