@@ -2,10 +2,15 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                'kayang-yellow': '#E8FC03',
-                /* Warna kuning stabilo */
-                'kayang-black': '#0A0A0A',
-                'kayang-gray': '#1A1A1A',
+                // WARNA BARU
+                'kayang-orange': '#FF9900',
+                /* Warna Oranye Utama dari Logo */
+                'kayang-cream': '#FFF8E7',
+                /* Warna Krem Terang untuk Latar Belakang */
+                'kayang-dark': '#4A3F35',
+                /* Warna Teks Cokelat Tua (Pengganti Hitam) */
+                'kayang-brown': '#8B5E3C',
+                /* Warna Cokelat Aksen */
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
