@@ -31,3 +31,25 @@ if (track && prevBtn && nextBtn) {
         });
     });
 }
+
+function sendToWhatsapp(event) {
+    event.preventDefault();
+    const name = document.getElementById('orderName').value;
+    const phone = document.getElementById('orderPhone').value;
+    const message = document.getElementById('orderPesan').value;
+
+    if (!name || !phone || !message) {
+        alert("Mohon lengkapi semua data pesanan.");
+        return;
+    }
+
+    const whatsappNumber = "6283850337840"; // Nomor dari footer
+    const text = `Halo myTortilla, saya ingin memesan:%0A%0A` +
+        `Nama: ${name}%0A` +
+        `No. HP: ${phone}%0A` +
+        `Pesanan: ${message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+    window.open(url, '_blank');
+}
