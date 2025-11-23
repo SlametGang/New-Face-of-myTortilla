@@ -42,3 +42,13 @@ html {
     transform: translateY(-10px);
     border-color: #E8FC03;
 }
+
+/* UTILITY: Sembunyikan Scrollbar untuk Slider Testimoni */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
