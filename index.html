@@ -431,24 +431,26 @@
                 <!-- Form dengan style baru -->
                 <form
                     class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left bg-kayang-cream p-8 rounded-[2rem] shadow-lg border border-kayang-orange/20"
-                    onsubmit="event.preventDefault(); alert('Pesanan Terkirim! Kami akan segera menghubungi Anda.');">
+                    onsubmit="sendToWhatsapp(event)">
                     <div class="col-span-2 md:col-span-1">
                         <label class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">NAMA
                             LENGKAP</label>
-                        <input type="text" placeholder="Nama Anda"
+                        <input type="text" id="orderName" placeholder="Nama Anda"
                             class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm">
                     </div>
                     <div class="col-span-2 md:col-span-1">
                         <label
                             class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">NOMOR
                             WHATSAPP</label>
-                        <input type="tel" placeholder="Contoh: 081234567890"
+                        <input type="tel" id="orderPhone" placeholder="Contoh: 081234567890"
                             class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm">
                     </div>
                     <div class="col-span-2">
-                        <label class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">ISI
-                            PESAN</label>
-                        <textarea rows="5" placeholder="Tulis pesanan Anda di sini"
+                        <label
+                            class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">PESANAN
+                            / PERMINTAAN KHUSUS</label>
+                        <textarea rows="5" id="orderPesan"
+                            placeholder="Tulis detail pesanan Anda di sini (Contoh: 2 Crispy Fried Tortilla, 1 Frozen Tortilla)..."
                             class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm resize-none"></textarea>
                     </div>
                     <div class="col-span-2 mt-6">
