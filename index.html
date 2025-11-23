@@ -16,415 +16,548 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- 1. NAVBAR (STICKY) -->
-    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-5 flex justify-between items-center mix-blend-difference text-white transition-all duration-300"
+<body class="bg-kayang-cream text-kayang-dark">
+    <!-- 1. NAVBAR (STICKY - Diubah jadi teks gelap dan background terang) -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-5 flex justify-between items-center transition-all duration-300 bg-kayang-cream/95 backdrop-blur-md shadow-sm border-b border-kayang-orange/10"
         id="navbar">
         <a href="#" class="flex items-center gap-3 group">
+            <!-- Hapus filter invert agar logo tampil warna aslinya -->
             <img src="images/logo/logo-my.png" alt="myTortilla Logo"
-                class="h-8 w-8 object-contain filter invert brightness-0 group-hover:brightness-100 group-hover:invert-0 transition-all duration-300">
-            <span
-                class="text-3xl font-black tracking-tighter group-hover:text-kayang-yellow transition-colors">myTortilla</span>
+                class="h-10 w-10 object-contain transition-all duration-300 group-hover:scale-110">
+            <span class="text-3xl font-black tracking-tighter text-kayang-orange transition-colors">myTortilla</span>
         </a>
-        <div class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wide">
-            <a href="#about" class="hover:text-kayang-yellow transition-colors">Tentang</a>
-            <a href="#menu" class="hover:text-kayang-yellow transition-colors">Menu</a>
-            <a href="#testimoni" class="hover:text-kayang-yellow transition-colors">Testimoni</a>
-            <a href="#contact" class="hover:text-kayang-yellow transition-colors">Kontak Kami</a>
+        <div class="hidden md:flex items-center gap-8 font-bold text-sm uppercase tracking-wide text-kayang-brown">
+            <a href="#about" class="hover:text-kayang-orange transition-colors">Tentang</a>
+            <a href="#menu" class="hover:text-kayang-orange transition-colors">Menu</a>
+            <a href="#testimoni" class="hover:text-kayang-orange transition-colors">Testimoni</a>
+            <!-- Tombol Kontak dengan gaya baru -->
+            <a href="#contact"
+                class="bg-kayang-orange text-white px-6 py-2.5 rounded-full hover:bg-kayang-brown transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                Kontak Kami <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
         </div>
-        <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <button class="md:hidden text-2xl text-kayang-orange"
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Overlay (Background terang) -->
     <div id="mobile-menu"
-        class="hidden fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center gap-8 text-xl">
-        <button class="absolute top-6 right-6 text-white text-3xl"
+        class="hidden fixed inset-0 bg-kayang-cream z-50 flex flex-col items-center justify-center gap-8 text-xl text-kayang-dark">
+        <button class="absolute top-6 right-6 text-kayang-dark text-3xl hover:text-kayang-orange"
             onclick="document.getElementById('mobile-menu').classList.add('hidden')">&times;</button>
-        <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang</a>
-        <a href="#menu" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Menu</a>
-        <a href="#testimoni"
-            onclick="document.getElementById('elementId: string').classList.add('hidden')">Testimoni</a>
-        <a href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Kontak Kami</a>
+        <a href="#about" class="hover:text-kayang-orange font-bold"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang</a>
+        <a href="#menu" class="hover:text-kayang-orange font-bold"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')">Menu</a>
+        <a href="#testimoni" class="hover:text-kayang-orange font-bold"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')">Testimoni</a>
+        <a href="#contact" class="hover:text-kayang-orange font-bold"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')">Kontak Kami</a>
     </div>
 
-    <!-- 2. HERO SECTION (FIXED BACKGROUND) -->
+    <!-- 2. HERO SECTION (FIXED BACKGROUND - Overlay diubah jadi oranye hangat) -->
     <header class="hero-fixed bg-cover bg-center bg-no-repeat"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/back_tortilla.jpeg');">
+        style="background-image: linear-gradient(rgba(255, 153, 0, 0.4), rgba(74, 63, 53, 0.6)), url('images/back_tortilla.jpeg');">
         <div class="text-center px-4">
             <h1
-                class="text-7xl md:text-[10rem] font-black leading-none tracking-tighter text-kayang-yellow drop-shadow-2xl">
+                class="text-7xl md:text-[10rem] font-black leading-none tracking-tighter text-white drop-shadow-[0_5px_15px_rgba(255,153,0,0.6)]">
                 myTortilla
             </h1>
-            <p class="mt-6 text-lg md:text-2xl text-white max-w-2xl mx-auto font-light">
+            <p class="mt-6 text-lg md:text-2xl text-white max-w-2xl mx-auto font-medium drop-shadow-md">
                 Temukan Kisahmu Di Setiap Gigitan myTortilla.
             </p>
-            <div class="mt-10 animate-bounce text-kayang-yellow text-2xl">
+            <div class="mt-10 animate-bounce text-white text-3xl drop-shadow-lg">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
 
-        <!-- Open Hours Widget -->
+        <!-- Open Hours Widget (Gaya baru yang lebih cerah) -->
         <div
-            class="absolute bottom-8 left-8 border border-white/20 backdrop-blur-md p-4 rounded bg-black/30 hidden md:block">
-            <p class="text-xs text-gray-300 mb-1">OPENING HOURS</p>
-            <div class="text-sm font-bold flex justify-between gap-4">
+            class="absolute bottom-8 left-8 border-2 border-kayang-orange/30 backdrop-blur-md p-5 rounded-2xl bg-white/90 shadow-xl hidden md:block text-kayang-dark">
+            <p class="text-xs font-black text-kayang-orange mb-2 flex items-center gap-2"><i class="far fa-clock"></i>
+                OPENING HOURS</p>
+            <div class="text-sm font-bold flex justify-between gap-8">
                 <span>TUE - THU</span>
-                <span>08.00 - 17.00</span>
+                <span class="text-kayang-orange">08.00 - 17.00</span>
             </div>
         </div>
     </header>
 
-    <!-- 3. CONTENT LAYER (MENUTUP HERO SAAT SCROLL) -->
-    <div class="content-layer">
-        <!-- BAGIAN ABOUT (BARU) -->
-        <section id="about" class="py-24 px-6 md:px-12 border-b border-gray-900">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- 3. CONTENT LAYER (Background Terang) -->
+    <div class="content-layer bg-kayang-cream shadow-[0_-20px_60px_rgba(255,153,0,0.15)]">
+        <!-- BAGIAN ABOUT -->
+        <section id="about" class="py-24 px-6 md:px-12 relative overflow-hidden">
+            <!-- Hiasan Latar Belakang Abstrak -->
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-orange-100 rounded-l-[100px] -z-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center z-10 relative">
                 <!-- Teks About -->
                 <div>
-                    <h4 class="text-kayang-yellow font-bold uppercase tracking-widest mb-2">Tentang Kami</h4>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Pengenalan<br>myTortilla</h2>
-                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                    <h4
+                        class="text-kayang-orange font-black uppercase tracking-widest mb-3 text-sm flex items-center gap-2">
+                        <span class="w-8 h-0.5 bg-kayang-orange"></span>Tentang Kami</h4>
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 leading-none text-kayang-dark">Pengenalan<br><span
+                            class="text-kayang-orange relative">myTortilla <span
+                                class="absolute bottom-1 left-0 w-full h-3 bg-orange-200 -z-10 opacity-70 rounded-full"></span></span>
+                    </h2>
+                    <p class="text-kayang-brown text-lg mb-8 leading-relaxed font-medium">
                         MyTortilla adalah usaha kuliner yang berfokus pada pembuatan dan penjualan tortilla dengan cita
                         rasa lezat, dan praktis. Setiap produk dibuat dari bahan berkualitas serta diolah secara
                         higienis untuk memastikan kepuasan dan kepercayaan pelanggan.
                     </p>
-                    <!-- Stats Kecil -->
-                    <div class="flex gap-8">
+                    <!-- Stats Kecil (Gaya baru) -->
+                    <div
+                        class="flex gap-12 mt-12 p-6 bg-white rounded-3xl shadow-md border border-kayang-orange/20 inline-flex">
                         <div>
-                            <span class="block text-3xl font-bold text-white">5</span>
-                            <span class="text-sm text-gray-500">Tokoh Utama</span>
+                            <span class="block text-5xl font-black text-kayang-orange">5</span>
+                            <span class="text-sm font-bold text-kayang-brown uppercase tracking-wider">Tokoh
+                                Utama</span>
                         </div>
-                        <div>
-                            <span class="block text-3xl font-bold text-white">50+</span>
-                            <span class="text-sm text-gray-500">Tortilla Terjual</span>
+                        <div class="border-l-2 border-kayang-orange/20 pl-12">
+                            <span class="block text-5xl font-black text-kayang-orange">50+</span>
+                            <span class="text-sm font-bold text-kayang-brown uppercase tracking-wider">Tortilla
+                                Terjual</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Gambar About -->
+                <!-- Gambar About (Hiasan diubah jadi oranye) -->
                 <div class="relative">
-                    <div class="absolute -top-10 left-[5%] w-24 h-24 border-t-4 border-l-4 border-kayang-yellow z-0">
-                    </div>
+                    <!-- Hapus grayscale agar gambar lebih colorful -->
                     <img src="images/logo/logo-3.JPG" alt="logo-About"
-                        class="relative z-10 rounded-lg shadow-2xl w-3/4 mx-auto grayscale hover:grayscale-0 transition-all duration-500">
+                        class="relative z-10 rounded-[3rem] shadow-[20px_20px_60px_rgba(255,153,0,0.15)] w-4/5 mx-auto transform hover:scale-105 transition-all duration-500 border-8 border-white">
+                    <!-- Hiasan Oranye -->
                     <div
-                        class="absolute -bottom-10 right-[5%] w-24 h-24 border-b-4 border-r-4 border-kayang-yellow z-0">
+                        class="absolute -top-8 -left-8 w-40 h-40 bg-kayang-orange rounded-full -z-10 opacity-20 blur-xl">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -right-8 w-40 h-40 bg-kayang-orange rounded-full -z-10 opacity-20 blur-xl">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BAGIAN MENU -->
-        <section id="menu" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <!-- BAGIAN MENU (Background Putih Bersih) -->
+        <section id="menu"
+            class="py-24 px-6 md:px-12 max-w-7xl mx-auto bg-white rounded-[3rem] shadow-xl my-12 relative border-b-8 border-kayang-orange">
+            <div
+                class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-kayang-orange text-white px-8 py-2 rounded-full font-black text-sm uppercase tracking-widest shadow-lg">
+                Menu Favorit</div>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 pt-10">
                 <div>
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Menu Kami Yang<br><span
-                            class="text-gray-500">Diinginkan oleh semua orang</span></h2>
-                    <!-- <p class="text-gray-400 max-w-md text-sm">
-                        Discover a symphony of tastes with our handpicked favorites.
-                    </p> -->
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 text-kayang-dark leading-tight">Menu Kami
+                        Yang<br><span class="text-kayang-orange">Diinginkan oleh semua orang</span></h2>
                 </div>
+                <!-- Tombol diubah gayanya -->
                 <a href="#contact"
-                    class="bg-kayang-yellow text-black px-8 py-3 font-bold rounded hover:bg-white hover:scale-105 transition-all">
-                    Book Online
+                    class="bg-kayang-orange text-white px-10 py-4 font-bold rounded-full hover:bg-kayang-brown shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                    <i class="fas fa-utensils"></i> Pesan Sekarang
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Produk 1 -->
-                <div class="menu-card group rounded-xl overflow-hidden p-4">
-                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                <!-- Produk 1 (Card gaya baru) -->
+                <div
+                    class="group p-6 rounded-3xl bg-white border-2 border-kayang-cream hover:border-kayang-orange/50 hover:shadow-[0_15px_40px_rgba(255,153,0,0.15)] transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-kayang-orange text-white text-xs font-bold px-4 py-2 rounded-bl-2xl z-10">
+                        BEST SELLER</div>
+                    <div
+                        class="h-64 overflow-hidden rounded-2xl mb-6 bg-orange-50/50 flex items-center justify-center p-4 group-hover:bg-orange-100/50 transition-colors">
                         <img src="images/menu/66269a72-76aa-4967-9f10-419b9e814f76.PNG" alt="Fried Tortilla"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            class="h-full w-auto object-contain mx-auto group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Crispy Fried Tortilla</h3>
-                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Tortilla renyah yang digoreng hingga
+                    <h3
+                        class="text-2xl font-black mb-3 text-kayang-dark group-hover:text-kayang-orange transition-colors">
+                        Crispy Fried Tortilla</h3>
+                    <p class="text-kayang-brown text-sm mb-6 leading-relaxed font-medium">Tortilla renyah yang digoreng
+                        hingga
                         keemasan, memberikan tekstur gurih dan rasa lezat di setiap gigitan.</p>
-                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                        <div class="text-kayang-yellow text-xs flex gap-1">
+                    <div class="flex justify-between items-center border-t-2 border-kayang-cream pt-6">
+                        <div class="text-kayang-orange text-sm flex gap-1">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="font-bold text-lg">IDR 5.000</span>
+                        <span class="font-black text-3xl text-kayang-orange">IDR 5.000</span>
                     </div>
                 </div>
 
                 <!-- Produk 2 -->
-                <div class="menu-card group rounded-xl overflow-hidden p-4">
-                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                <div
+                    class="group p-6 rounded-3xl bg-white border-2 border-kayang-cream hover:border-kayang-orange/50 hover:shadow-[0_15px_40px_rgba(255,153,0,0.15)] transition-all duration-300">
+                    <div
+                        class="h-64 overflow-hidden rounded-2xl mb-6 bg-orange-50/50 flex items-center justify-center p-4 group-hover:bg-orange-100/50 transition-colors">
                         <img src="images/menu/tortilla-frozen.jpeg" alt="Frozen Tortilla"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            class="h-full w-auto object-contain mx-auto group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Frozen Tortilla warps</h3>
-                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Campuran daging & sayur yang di balut
+                    <h3
+                        class="text-2xl font-black mb-3 text-kayang-dark group-hover:text-kayang-orange transition-colors">
+                        Frozen Tortilla Wraps</h3>
+                    <p class="text-kayang-brown text-sm mb-6 leading-relaxed font-medium">Campuran daging & sayur yang
+                        di balut
                         kulit tortilla dingin yg siap goreng kapan saja.</p>
-                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                        <div class="text-kayang-yellow text-xs flex gap-1">
+                    <div class="flex justify-between items-center border-t-2 border-kayang-cream pt-6">
+                        <div class="text-kayang-orange text-sm flex gap-1">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="far fa-star"></i>
                         </div>
                         <div class="text-right leading-tight">
-                            <span class="font-bold text-lg block text-white">IDR 25.000</span>
-                            <span class="text-xs text-gray-400 font-normal">/ 5 pcs</span>
+                            <span class="font-black text-3xl block text-kayang-orange">IDR 25.000</span>
+                            <span class="text-sm text-kayang-brown font-bold">/ 5 pcs</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Produk 3 -->
-                <div class="menu-card group rounded-xl overflow-hidden p-4">
-                    <div class="h-64 overflow-hidden rounded-lg mb-5">
+                <div
+                    class="group p-6 rounded-3xl bg-white border-2 border-kayang-cream hover:border-kayang-orange/50 hover:shadow-[0_15px_40px_rgba(255,153,0,0.15)] transition-all duration-300">
+                    <div
+                        class="h-64 overflow-hidden rounded-2xl mb-6 bg-orange-50/50 flex items-center justify-center p-4 group-hover:bg-orange-100/50 transition-colors">
                         <img src="images/menu/mini_tortilla 2.jpeg" alt="mini_tortilla"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            class="h-full w-auto object-contain mx-auto group-hover:scale-110 transition-transform duration-500 drop-shadow-lg">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Mini Tortilla</h3>
-                    <p class="text-gray-400 text-xs mb-4 h-10 overflow-hidden">Versi mini dari tortilla yang siap jadi
+                    <h3
+                        class="text-2xl font-black mb-3 text-kayang-dark group-hover:text-kayang-orange transition-colors">
+                        Mini Tortilla</h3>
+                    <p class="text-kayang-brown text-sm mb-6 leading-relaxed font-medium">Versi mini dari tortilla yang
+                        siap jadi
                         kawan ngemil kamu di mana aja.</p>
-                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                        <div class="text-kayang-yellow text-xs flex gap-1">
+                    <div class="flex justify-between items-center border-t-2 border-kayang-cream pt-6">
+                        <div class="text-kayang-orange text-sm flex gap-1">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="text-right leading-tight">
-                            <span class="font-bold text-lg block text-white">IDR 5.000</span>
-                            <span class="text-xs text-gray-400 font-normal">/ 4 pcs</span>
+                            <span class="font-black text-3xl block text-kayang-orange">IDR 5.000</span>
+                            <span class="text-sm text-kayang-brown font-bold">/ 4 pcs</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Testimoni -->
+        <!-- Bagian Testimoni (Background Oranye Lembut Bergradasi) -->
         <section id="testimoni"
-            class="py-20 px-6 border-t border-b border-gray-900 bg-zinc-950 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto">
+            class="py-24 px-6 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
+            <!-- Hiasan Latar Belakang -->
+            <div class="absolute top-0 left-0 w-full h-24 bg-kayang-cream"
+                style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);"></div>
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-kayang-orange/20 rounded-full blur-3xl z-0"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-kayang-orange/20 rounded-full blur-3xl z-0"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10 pt-12">
                 <!-- Header Testimoni -->
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                     <div>
-                        <h2 class="text-kayang-yellow font-bold uppercase tracking-widest mb-2 text-sm">Testimoni
+                        <h2
+                            class="text-kayang-orange font-black uppercase tracking-widest mb-3 text-sm flex items-center gap-2">
+                            <span class="w-8 h-0.5 bg-kayang-orange"></span>Testimoni
                         </h2>
-                        <h3 class="text-3xl md:text-5xl font-bold text-white">Ulasan Pelanggan</h3>
+                        <h3 class="text-4xl md:text-6xl font-black text-kayang-dark">Ulasan Pelanggan</h3>
                     </div>
-                    <!-- Tombol Navigasi -->
+                    <!-- Tombol Navigasi (Gaya baru) -->
                     <div class="flex gap-4">
                         <button id="prevBtn"
-                            class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-white hover:bg-kayang-yellow hover:text-black hover:border-kayang-yellow transition-all">
-                            <i class="fas fa-arrow-left"></i>
+                            class="w-14 h-14 rounded-full bg-white text-kayang-orange shadow-md flex items-center justify-center hover:bg-kayang-orange hover:text-white transition-all transform hover:scale-110 border-2 border-kayang-orange/20 hover:border-kayang-orange">
+                            <i class="fas fa-arrow-left text-xl"></i>
                         </button>
                         <button id="nextBtn"
-                            class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-white hover:bg-kayang-yellow hover:text-black hover:border-kayang-yellow transition-all">
-                            <i class="fas fa-arrow-right"></i>
+                            class="w-14 h-14 rounded-full bg-white text-kayang-orange shadow-md flex items-center justify-center hover:bg-kayang-orange hover:text-white transition-all transform hover:scale-110 border-2 border-kayang-orange/20 hover:border-kayang-orange">
+                            <i class="fas fa-arrow-right text-xl"></i>
                         </button>
                     </div>
                 </div>
-                <!-- Slider Track (Scrollable) -->
+                <!-- Slider Track (Card Testimoni Putih Bersih) -->
                 <div id="testimonial-track"
-                    class="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4">
+                    class="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-10 px-2">
                     <!-- Testimoni 1 -->
                     <div
-                        class="min-w-[300px] md:min-w-[400px] snap-center bg-zinc-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-kayang-yellow transition-colors duration-300">
+                        class="min-w-[350px] md:min-w-[450px] snap-center bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-transparent hover:border-kayang-orange/50 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-10"></div>
                         <div>
-                            <div class="text-kayang-yellow text-2xl mb-6">
+                            <div class="text-kayang-orange/40 text-7xl mb-6 font-serif absolute top-6 left-8">
                                 <i class="fas fa-quote-left"></i>
                             </div>
-                            <p class="text-gray-300 text-lg italic leading-relaxed mb-6">
+                            <p
+                                class="text-kayang-dark text-xl italic leading-relaxed mb-8 font-medium relative z-10 pl-12 pt-8">
                                 "Rasanya enak, gurih, rasanya pas, sesuai dengan harganya."
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-xl text-white">Irfan Manurung</h4>
-                            <div class="text-kayang-yellow text-xs mt-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-kayang-orange text-2xl font-black">
+                                IM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-kayang-dark">Irfan Manurung</h4>
+                                <div class="text-kayang-orange text-base mt-1 flex gap-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Testimoni 2 -->
                     <div
-                        class="min-w-[300px] md:min-w-[400px] snap-center bg-zinc-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-kayang-yellow transition-colors duration-300">
+                        class="min-w-[350px] md:min-w-[450px] snap-center bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-transparent hover:border-kayang-orange/50 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-10"></div>
                         <div>
-                            <div class="text-kayang-yellow text-2xl mb-6">
+                            <div class="text-kayang-orange/40 text-7xl mb-6 font-serif absolute top-6 left-8">
                                 <i class="fas fa-quote-left"></i>
                             </div>
-                            <p class="text-gray-300 text-lg italic leading-relaxed mb-6">
+                            <p
+                                class="text-kayang-dark text-xl italic leading-relaxed mb-8 font-medium relative z-10 pl-12 pt-8">
                                 "Enak rasanya dan harganya terjangkau. Mungkin bisa ditambah varian lain biar lebih
                                 banyak
                                 pilihan untuk dibeli."
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-xl text-white">Muhammad Dava</h4>
-                            <div class="text-kayang-yellow text-xs mt-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="far fa-star"></i>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-kayang-orange text-2xl font-black">
+                                MD
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-kayang-dark">Muhammad Dava</h4>
+                                <div class="text-kayang-orange text-base mt-1 flex gap-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Testimoni 3 -->
                     <div
-                        class="min-w-[300px] md:min-w-[400px] snap-center bg-zinc-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-kayang-yellow transition-colors duration-300">
+                        class="min-w-[350px] md:min-w-[450px] snap-center bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-transparent hover:border-kayang-orange/50 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-10"></div>
                         <div>
-                            <div class="text-kayang-yellow text-2xl mb-6">
+                            <div class="text-kayang-orange/40 text-7xl mb-6 font-serif absolute top-6 left-8">
                                 <i class="fas fa-quote-left"></i>
                             </div>
-                            <p class="text-gray-300 text-lg italic leading-relaxed mb-6">
+                            <p
+                                class="text-kayang-dark text-xl italic leading-relaxed mb-8 font-medium relative z-10 pl-12 pt-8">
                                 "Awalnya saya kira mereka jualan taiso, eh ternyata tortilla. Pas saya coba makan, enak
                                 banget! Sampai-sampai saya langsung beli lagi 😄"
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-xl text-white">Nabila Nasution</h4>
-                            <div class="text-kayang-yellow text-xs mt-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="far fa-star"></i>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-kayang-orange text-2xl font-black">
+                                NN
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-kayang-dark">Nabila Nasution</h4>
+                                <div class="text-kayang-orange text-base mt-1 flex gap-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Testimoni 4 -->
                     <div
-                        class="min-w-[300px] md:min-w-[400px] snap-center bg-zinc-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-kayang-yellow transition-colors duration-300">
+                        class="min-w-[350px] md:min-w-[450px] snap-center bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-transparent hover:border-kayang-orange/50 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-10"></div>
                         <div>
-                            <div class="text-kayang-yellow text-2xl mb-6">
+                            <div class="text-kayang-orange/40 text-7xl mb-6 font-serif absolute top-6 left-8">
                                 <i class="fas fa-quote-left"></i>
                             </div>
-                            <p class="text-gray-300 text-lg italic leading-relaxed mb-6">
+                            <p
+                                class="text-kayang-dark text-xl italic leading-relaxed mb-8 font-medium relative z-10 pl-12 pt-8">
                                 "Yang saya rasakan dari tortilla ini, tortilla nya enak, rasa asin dan gurih yang pas,
                                 hanya saja
                                 saya rasa tortilla ini lebih enak lagi di sajikan saat panas"
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-xl text-white">Rahma Ramadhani</h4>
-                            <div class="text-kayang-yellow text-xs mt-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="far fa-star"></i>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-kayang-orange text-2xl font-black">
+                                RR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-kayang-dark">Rahma Ramadhani</h4>
+                                <div class="text-kayang-orange text-base mt-1 flex gap-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Testimoni 5 -->
                     <div
-                        class="min-w-[300px] md:min-w-[400px] snap-center bg-zinc-900 p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-kayang-yellow transition-colors duration-300">
+                        class="min-w-[350px] md:min-w-[450px] snap-center bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-transparent hover:border-kayang-orange/50 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-10"></div>
                         <div>
-                            <div class="text-kayang-yellow text-2xl mb-6">
+                            <div class="text-kayang-orange/40 text-7xl mb-6 font-serif absolute top-6 left-8">
                                 <i class="fas fa-quote-left"></i>
                             </div>
-                            <p class="text-gray-300 text-lg italic leading-relaxed mb-6">
+                            <p
+                                class="text-kayang-dark text-xl italic leading-relaxed mb-8 font-medium relative z-10 pl-12 pt-8">
                                 "Kirain jualan taiso, ternyata tortilla! Pas dicoba, enaknya bikin ketagihan sampai
                                 langsung beli lagi 🤤🌯"
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-xl text-white">Nadya Alaika</h4>
-                            <div class="text-kayang-yellow text-xs mt-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-kayang-orange text-2xl font-black">
+                                NA
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-kayang-dark">Nadya Alaika</h4>
+                                <div class="text-kayang-orange text-base mt-1 flex gap-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="absolute bottom-0 left-0 w-full h-24 bg-white"
+                style="clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);"></div>
         </section>
 
-        <!-- BAGIAN CONTACT -->
-        <section id="contact" class="py-20 bg-zinc-900">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-4xl font-bold mb-4">Book a Table</h2>
-                <p class="text-gray-400 mb-10">Reserve your spot for an unforgettable dining experience.</p>
+        <!-- BAGIAN CONTACT (Background Putih dengan Aksen Oranye) -->
+        <section id="contact" class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute -top-48 -right-48 w-96 h-96 bg-kayang-orange/10 rounded-full blur-3xl z-0"></div>
+            <div class="absolute -bottom-48 -left-48 w-96 h-96 bg-kayang-orange/10 rounded-full blur-3xl z-0"></div>
+            <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
+                <h2 class="text-5xl font-black mb-6 text-kayang-dark leading-tight">Hubungi Kami Untuk<br><span
+                        class="text-kayang-orange">Pemesanan</span></h2>
+                <p class="text-kayang-brown text-xl mb-12 font-medium max-w-2xl mx-auto">Siap untuk merasakan kelezatan
+                    myTortilla? Isi formulir di bawah ini dan kami akan segera menghubungi Anda melalui WhatsApp.</p>
 
-                <form class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
-                    onsubmit="event.preventDefault(); alert('Booking Terkirim!');">
+                <!-- Form dengan style baru -->
+                <form
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left bg-kayang-cream p-8 rounded-[2rem] shadow-lg border border-kayang-orange/20"
+                    onsubmit="event.preventDefault(); alert('Pesanan Terkirim! Kami akan segera menghubungi Anda.');">
                     <div class="col-span-2 md:col-span-1">
-                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">NAME</label>
-                        <input type="text" placeholder="Your Name"
-                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none">
+                        <label class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">NAMA
+                            LENGKAP</label>
+                        <input type="text" placeholder="Nama Anda"
+                            class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm">
                     </div>
                     <div class="col-span-2 md:col-span-1">
-                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">PHONE</label>
-                        <input type="tel" placeholder="0812..."
-                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none">
+                        <label
+                            class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">NOMOR
+                            WHATSAPP</label>
+                        <input type="tel" placeholder="Contoh: 081234567890"
+                            class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm">
                     </div>
                     <div class="col-span-2">
-                        <label class="text-xs font-bold ml-1 mb-1 block text-gray-500">MESSAGE / REQUEST</label>
-                        <textarea rows="4" placeholder="Special requests..."
-                            class="w-full bg-black border border-gray-800 p-4 rounded text-white focus:border-kayang-yellow focus:outline-none"></textarea>
+                        <label class="text-sm font-black ml-1 mb-2 block text-kayang-dark uppercase tracking-wider">ISI
+                            PESAN</label>
+                        <textarea rows="5" placeholder="Tulis pesanan Anda di sini"
+                            class="w-full bg-white border-2 border-orange-100 p-5 rounded-xl text-kayang-dark font-bold focus:border-kayang-orange focus:ring-2 focus:ring-kayang-orange/20 focus:outline-none transition-all shadow-sm resize-none"></textarea>
                     </div>
-                    <div class="col-span-2 mt-4">
+                    <div class="col-span-2 mt-6">
                         <button type="submit"
-                            class="w-full bg-kayang-yellow text-black font-bold py-4 rounded hover:bg-white transition-colors">
-                            CONFIRM BOOKING
+                            class="w-full bg-kayang-orange text-white font-black text-xl py-5 rounded-xl hover:bg-kayang-dark transition-all shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fab fa-whatsapp text-3xl"></i> KIRIM PESANAN VIA WHATSAPP
                         </button>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="bg-black border-t border-gray-900 pt-20 pb-10 px-6 md:px-12">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- FOOTER (Background Cokelat Tua Hangat) -->
+        <footer class="bg-kayang-dark pt-24 pb-12 px-6 md:px-12 text-white relative overflow-hidden">
+            <!-- Gelombang hiasan di atas footer -->
+            <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none" class="relative block h-12 w-full fill-white">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 relative z-10 pt-8">
 
                 <!-- Logo & Info -->
                 <div class="md:col-span-1">
-                    <h2 class="text-4xl font-black tracking-tighter text-white mb-6">myTortilla</h2>
-                    <div class="flex flex-col gap-3 text-sm text-gray-400">
-                        <a href="mailto:contact@mytortilla.xyz" class="hover:text-kayang-yellow"><i
-                                class="far fa-envelope mr-2"></i> contact@mytortilla.xyz</a>
+                    <a href="#" class="flex items-center gap-3 mb-8 group">
+                        <!-- Logo tanpa filter agar tampil oranye -->
+                        <img src="images/logo/logo-my.png" alt="myTortilla Logo"
+                            class="h-12 w-12 object-contain transition-transform group-hover:scale-110">
+                        <span
+                            class="text-4xl font-black tracking-tighter text-kayang-orange group-hover:text-white transition-colors">myTortilla</span>
+                    </a>
+                    <p class="text-white/80 mb-8 font-medium leading-relaxed">Menghadirkan kelezatan tortilla autentik
+                        dengan sentuhan modern untuk setiap momen Anda.</p>
+                    <div class="flex flex-col gap-4 text-base text-white/80 font-medium">
+                        <a href="mailto:contact@mytortilla.xyz"
+                            class="hover:text-kayang-orange transition-colors flex items-center gap-3"><i
+                                class="far fa-envelope text-kayang-orange"></i> contact@mytortilla.xyz</a>
                         <a href="http://wa.me/6283850337840?text=Hallo%20kak%20saya%20mau%20pesan%20tortillanya%20dong%20%F0%9F%98%8D"
-                            class="hover:text-kayang-yellow"><i class="fas fa-phone-alt mr-2"></i> +62
+                            class="hover:text-kayang-orange transition-colors flex items-center gap-3"><i
+                                class="fas fa-phone-alt text-kayang-orange"></i> +62
                             838-5033-7840</a>
                     </div>
-                    <div class="flex gap-4 mt-8 text-xl text-white">
-                        <a href="https://www.instagram.com/mytortilla_id" class="hover:text-kayang-yellow"><i
+                    <div class="flex gap-4 mt-10 text-2xl text-white">
+                        <a href="https://www.instagram.com/mytortilla_id"
+                            class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-kayang-orange transition-all transform hover:scale-110"><i
                                 class="fab fa-instagram"></i></a>
                         <a href="http://wa.me/6283850337840?text=Hallo%20kak%20saya%20mau%20pesan%20tortillanya%20dong%20%F0%9F%98%8D"
-                            aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            aria-label="WhatsApp"
+                            class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-kayang-orange transition-all transform hover:scale-110"><i
+                                class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Menu Links -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6">Menu</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
-                        <li><a href="#about" class="hover:text-white">Tentang</a></li>
-                        <li><a href="#menu" class="hover:text-white">Menu</a></li>
-                        <li><a href="#testimoni" class="hover:text-white">Testimoni</a></li>
-                        <li><a href="#contact" class="hover:text-white">Kontak Kami</a></li>
+                    <h4 class="font-black text-xl mb-8 text-white uppercase tracking-wider flex items-center gap-3"><i
+                            class="fas fa-compass text-kayang-orange"></i> Navigasi</h4>
+                    <ul class="space-y-4 text-white/80 font-bold text-lg">
+                        <li><a href="#about"
+                                class="hover:text-kayang-orange transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-kayang-orange"></i> Tentang Kami</a></li>
+                        <li><a href="#menu"
+                                class="hover:text-kayang-orange transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-kayang-orange"></i> Menu Favorit</a></li>
+                        <li><a href="#testimoni"
+                                class="hover:text-kayang-orange transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-kayang-orange"></i> Ulasan Pelanggan</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="hover:text-kayang-orange transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-kayang-orange"></i> Hubungi Kami</a></li>
                     </ul>
                 </div>
 
-                <!-- Others -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Others</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Open At -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Open at</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex justify-between border-b border-gray-800 pb-2">
-                            <span class="text-gray-400">Tuesday</span>
-                            <span class="font-mono">08.00 - 17.00</span>
-                        </li>
-                        <li class="flex justify-between border-b border-gray-800 pb-2">
-                            <span class="text-gray-400">Wednesday</span>
-                            <span class="font-mono">08.00 - 17.00</span>
-                        </li>
-                        <li class="flex justify-between border-b border-gray-800 pb-2">
-                            <span class="text-gray-400">Thursday</span>
-                            <span class="font-mono">08.00 - 17.00</span>
-                        </li>
-                        <li class="flex justify-between pt-2 opacity-50">
-                            <span class="text-gray-600">Other Days</span>
-                            <span class="text-gray-600">Closed</span>
-                        </li>
-                    </ul>
+                <!-- Jam Buka -->
+                <div class="md:col-span-2">
+                    <h4 class="font-black text-xl mb-8 text-white uppercase tracking-wider flex items-center gap-3"><i
+                            class="far fa-clock text-kayang-orange"></i> Jam Operasional</h4>
+                    <div class="bg-white/10 p-8 rounded-3xl border border-white/5">
+                        <ul class="space-y-6 text-lg font-medium">
+                            <li class="flex justify-between items-center border-b border-white/10 pb-4">
+                                <span class="text-white flex items-center gap-3"><i
+                                        class="fas fa-calendar-day text-kayang-orange"></i> Selasa - Kamis</span>
+                                <span
+                                    class="font-black text-kayang-orange bg-kayang-orange/10 px-4 py-1 rounded-full">08.00
+                                    - 17.00 WIB</span>
+                            </li>
+                            <li class="flex justify-between items-center pt-2 opacity-70">
+                                <span class="text-white/80 flex items-center gap-3"><i
+                                        class="fas fa-calendar-times"></i> Hari Lainnya</span>
+                                <span class="text-white/80 font-bold bg-white/10 px-4 py-1 rounded-full">Tutup</span>
+                            </li>
+                        </ul>
+                        <p class="mt-8 text-white/70 text-sm text-center leading-relaxed">
+                            *Jam operasional dapat berubah sewaktu-waktu pada hari libur nasional. Cek Instagram kami
+                            untuk info terbaru.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-900 mt-16 pt-8 text-center text-gray-600 text-xs">
-                &copy; myTortilla 2025. All rights reserved.
+            <div
+                class="border-t border-white/10 mt-20 pt-10 text-center text-white/60 text-sm font-medium flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2025 myTortilla. Hak Cipta Dilindungi.</p>
+                <p>Dibuat dengan <i class="fas fa-heart text-kayang-orange mx-1 animate-pulse"></i> untuk pecinta
+                    kuliner Indonesia.</p>
             </div>
         </footer>
     </div>
